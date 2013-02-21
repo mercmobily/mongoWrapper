@@ -1,5 +1,5 @@
 {
-  "name": "mongoWrapper",
+  "name": "mongowrapper",
   "description": "The simplest wrapper to the Mongodb API",
   "keywords": [
     "mongo",
