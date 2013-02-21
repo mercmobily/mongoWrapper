@@ -1,0 +1,20 @@
+{
+  "name": "mongoWrapper",
+  "description": "The simplest wrapper to the Mongodb API",
+  "keywords": [
+    "mongo",
+    "db",
+    "mongodb"
+  ],
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mercmobily/mongoWrapper.git"
+  },
+  "author": {
+    "name": "Tony Mobily"
+  },
+  "dependencies": {
+    "mongodb": "1.x.x"
+  }
+}
