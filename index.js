@@ -7,7 +7,7 @@ function MongoWrapper() {
 var mongoWrapper = new MongoWrapper;
 module.exports = exports = mongoWrapper;
 
-// This means that you can do `new include('mongoWrapper').MongoWrapper()`
+// This means that you can do `new include('mongowrapper').MongoWrapper()`
 mongoWrapper.MongoWrapper = MongoWrapper;
 
 
@@ -17,21 +17,29 @@ mongoWrapper.MongoWrapper = MongoWrapper;
 mongoWrapper.ObjectId = function() {
 	if (!mongo.BSONNative || !mongo.BSONNative.ObjectID) {
 	  return function(id) {
+                if( id instanceof mongo.ObjectID ) return id;
 		return mongo.BSONPure.ObjectID.createFromHexString(id);
 	  };
 	}
 	return function(id) {
+                // if( id instanceof mongo.BSONNative.ObjectID ) return id;
+                if( id instanceof mongo.ObjectID ) return id;
 		return new mongo.BSONNative.ObjectID(id);
 	};
 }();
 
 mongoWrapper.checkObjectId = function( s ){
+
+  // It already is a mongo.ObjectID
+  if( s instanceof mongo.ObjectID ) return true;
+
+  // It's a string
   return new RegExp("^[0-9a-fA-F]{24}$").test(s);
 }
 
 MongoWrapper.prototype.connect = function(url, options, cb ){
 
-  var that = this;
+  var self = this;
   var MongoClient = mongo.MongoClient;
 
   MongoClient.connect( url, function( err, db ){
@@ -39,7 +47,7 @@ MongoWrapper.prototype.connect = function(url, options, cb ){
     if( err ) {
       console.log( err );
     } else {
-      that.db = db;
+      self.db = db;
     }
     cb( err, db );
   });
