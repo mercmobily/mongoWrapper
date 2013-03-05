@@ -35,7 +35,7 @@ _Note:_ db might not be set by the time your modules get to it. Unless you are u
 
 The module comes with two important bonus functions:
 
-### mw.ObjectId()
+### `mw.ObjectId()`
 
 When called without a parameter, this function will return a new `ObjectId` object:
 
