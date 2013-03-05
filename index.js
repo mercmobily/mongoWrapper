@@ -42,7 +42,7 @@ MongoWrapper.prototype.connect = function(url, options, cb ){
   var self = this;
   var MongoClient = mongo.MongoClient;
 
-  MongoClient.connect( url, function( err, db ){
+  MongoClient.connect( url, options, function( err, db ){
     
     if( err ) {
       console.log( err );
