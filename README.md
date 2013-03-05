@@ -8,8 +8,9 @@ Usage:
 
     var mw = require('mongowrapper');
 
+    var mongoOptions = {}
 
-    mw.connect('mongodb://localhost/yourdatabase', {}, function( err, db ){
+    mw.connect('mongodb://localhost/yourdatabase', mongoOptions, function( err, db ){
       // db is defined here
       // `mw.db` is also available
     }
@@ -27,6 +28,8 @@ Modules can then:
       // ...
     });
     
+
+The module uses [mongoClient.connect()](http://mongodb.github.com/node-mongodb-native/api-generated/mongoclient.html#mongoclient-connect) to connect (yes, the new fancy syntax everybody should be using where you specify a connection URL!).
 
 _Note:_ db might not be set by the time your modules get to it. Unless you are using the callback, you shouldn't use `mw.db` without checking if it's !== null.
 
