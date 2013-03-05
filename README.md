@@ -35,7 +35,7 @@ _Note:_ db might not be set by the time your modules get to it. Unless you are u
 
 The module comes with two important bonus functions:
 
-## `ObjectId()` (`mw.ObjectId()`)
+### mw.ObjectId()
 
 When called without a parameter, this function will return a new `ObjectId` object:
 
@@ -48,7 +48,7 @@ When called with a parameter, this function will convert the string into an `Obj
 
 It will create ObjectId objects using either the `BSONNative` (when/if available) or the fallback (slower) `BSONPure` function.
 
-## `checkObjectId()` (`mw.checkObjectId()`)
+### `mw.checkObjectId()`
 
 It checks if the string passed is a valid Mongo object id (a 24-byte long string with hex characters in it).
 
