@@ -64,7 +64,6 @@ If you pass it an ObjectId, it will also return true:
 
 Watch out, as ObjectId will throw an `Error()` if the string passed is not a legal `ObjectId`.
 
-
 ## Why use this rather than the plain Mongo native driver?
 
 This is as close as you will ever get to the native mongo driver. Other wrappers will wrap operations in functions which will queue requests till the connection to the database is established. This is not the case here, as the existance of the `mw.db` variable can be checked at runtime.
