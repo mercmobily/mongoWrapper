@@ -6,7 +6,7 @@
     "db",
     "mongodb"
   ],
-  "version": "0.1.12",
+  "version": "0.3.1",
   "repository": {
     "type": "git",
     "url": "git://github.com/mercmobily/mongoWrapper.git"
@@ -15,6 +15,6 @@
     "name": "Tony Mobily"
   },
   "dependencies": {
-    "mongodb": "1.x.x"
+    "mongodb": "1.4.x"
   }
 }
