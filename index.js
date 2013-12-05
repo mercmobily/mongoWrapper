@@ -20,10 +20,15 @@ module.exports = exports = mongoWrapper;
 mongoWrapper.MongoWrapper = MongoWrapper;
 
 
-
 // ObjectId is the most handy method of all. This will work with
 // native BSON or Pure BSON
-mongoWrapper.ObjectId = function() {
+mongoWrapper.ObjectId = function( id ){
+  if( id instanceof mongo.ObjectID ) return id;
+  return mongo.ObjectID( id );
+}
+
+
+/*function() {
 	if (!mongo.BSONNative || !mongo.BSONNative.ObjectID) {
 	  return function(id) {
                 if( id instanceof mongo.ObjectID ) return id;
@@ -36,6 +41,7 @@ mongoWrapper.ObjectId = function() {
 		return new mongo.BSONNative.ObjectID(id);
 	};
 }();
+*/
 
 mongoWrapper.checkObjectId = function( s ){
 
