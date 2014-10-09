@@ -28,21 +28,6 @@ mongoWrapper.ObjectId = function( id ){
 }
 
 
-/*function() {
-	if (!mongo.BSONNative || !mongo.BSONNative.ObjectID) {
-	  return function(id) {
-                if( id instanceof mongo.ObjectID ) return id;
-		return mongo.BSONPure.ObjectID.createFromHexString(id);
-	  };
-	}
-	return function(id) {
-                // if( id instanceof mongo.BSONNative.ObjectID ) return id;
-                if( id instanceof mongo.ObjectID ) return id;
-		return new mongo.BSONNative.ObjectID(id);
-	};
-}();
-*/
-
 mongoWrapper.checkObjectId = function( s ){
 
   // It already is a mongo.ObjectID
